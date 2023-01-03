@@ -1,12 +1,20 @@
 #include <Wire.h>
 #include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
 #include "display.h"
 
-Display::Display(int width, int height)
-    : screen_width(width), screen_height(height), display (Adafruit_SSD1306(screen_width, screen_height, &Wire, -1))
-    {
-        displaySetup();
-    }
+// Display::Display(int width, int height)
+//     : screen_width(width), screen_height(height), display (Adafruit_SSD1306(screen_width, screen_height, &Wire, -1))
+//     {
+//         displaySetup();
+//     }
+
+Display::Display(int width, int height) {
+    screen_width = width;
+    screen_height = height;
+    display = Adafruit_SSD1306(screen_width, screen_height, &Wire, -1);
+    displaySetup();
+}
 
 void Display::showMessage(const char *text, uint8_t font_size = 1) {
     int16_t x1, y1;

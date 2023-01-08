@@ -1,8 +1,7 @@
-#ifndef SERVER_H
-#define SERVER_H
+#pragma once
 
 #include <ESP8266WebServer.h>
-#include <string_view>
+#include <string>
 
 struct Endpoint {
     const Uri url;
@@ -17,5 +16,3 @@ class EspServer {
     private:
         ESP8266WebServer server;
 };
-
-#endif

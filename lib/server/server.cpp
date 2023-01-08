@@ -1,5 +1,3 @@
-#include <iterator>
-#include <Wire.h>
 #include "server.h"
 
 EspServer::EspServer(int port, const std::vector<Endpoint>& endpoints) : server(port) {
